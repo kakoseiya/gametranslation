@@ -1,0 +1,17 @@
+@(publicId: String)
+
+@main {
+    <document-list></document-list>
+
+
+    <script>
+            var menuObs = riot.observable();
+            var obs = riot.observable();
+            var messageObs = riot.observable();
+
+            riot.mount('document-list',
+                    {publicId:'@publicId'}
+                    );
+    </script>
+
+}

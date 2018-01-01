@@ -1,0 +1,2 @@
+コマンド
+riot src dist & gulp & copy /y C:\Users\Seiya\Documents\translation\nginx\assets\tags\app\main.min.js C:\Users\Seiya\Documents\translation\public\tags\app\main.min.js

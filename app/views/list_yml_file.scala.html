@@ -1,0 +1,17 @@
+@(publicId: String)
+
+@main {
+    <yml-file-list></yml-file-list>
+
+
+    <script>
+            var menuObs = riot.observable();
+            var obs = riot.observable();
+            var messageObs = riot.observable();
+
+            riot.mount('yml-file-list',
+                    {publicId: '@publicId'}
+            );
+    </script>
+
+}

@@ -1,0 +1,144 @@
+
+########################################################################################
+# 初期設定
+########################################################################################
+
+GET           /assets/*file                    controllers.Assets.versioned(path="/public", file : Asset)
+
+
+
+########################################################################################
+# Login
+########################################################################################
+
+#ログイン
+GET           /                                controllers.Login.index()
+
+GET           /login                           controllers.Login.index()
+
+POST          /login                           controllers.Login.doLogin()
+
+GET           /logout                          controllers.Login.logout()
+
+
+########################################################################################
+# Sign Up
+########################################################################################
+
+GET           /signup                          controllers.SignUp.preRegist()
+
+POST          /signup                          controllers.SignUp.doPreRegist()
+
+GET           /signup/regist                   controllers.SignUp.confirmEmail(hash)
+
+########################################################################################
+# Debug
+########################################################################################
+
+GET           /debug/login                     controllers.Debug.viewLoginTop()
+
+GET           /debug/login/new                 controllers.Debug.viewLoginNew()
+
+GET           /debug/login/create              controllers.Debug.userCreate()
+
+GET           /debug/login/list                controllers.Debug.list()
+
+GET           /debug/logout                    controllers.Login.logout()
+
+GET           /debug/signup/preregisted        controllers.Debug.viewSignUpPregisted(hash)
+
+
+########################################################################################
+# User
+########################################################################################
+
+#ユーザー名などを取得する
+GET           /user/account                    controllers.api.UserWebApi.get()
+
+#MyPageを表示する
+GET           /mypage                          controllers.api.UserWebApi.page()
+
+#MyPageからユーザー情報を変更する
+POST          /mypage/account                  controllers.api.UserWebApi.post()
+
+
+########################################################################################
+# Game
+########################################################################################
+
+#一覧が表示される
+GET           /game                            controllers.api.GameWebApi.page()
+
+#gameをJSON表示
+GET           /game/list                       controllers.api.GameWebApi.list()
+
+#game情報をJSONで取得
+GET           /game/get                            controllers.api.GameWebApi.get(id)
+
+#保存する
+POST          /game                            controllers.api.GameWebApi.post()
+
+#削除する
+DELETE        /game                            controllers.api.GameWebApi.delete(id)
+
+
+
+########################################################################################
+# Yml File
+########################################################################################
+
+#一覧が表示される
+GET           /game/file                       controllers.api.YmlFileWebApi.page(id)
+
+#Gameの公開IDでYmlFileをリストアップ(JSON)
+GET           /file/$id<[^/]+>                 controllers.api.YmlFileWebApi.list(id)
+
+#YmlFileの公開IDで情報を取得(JSON)
+GET           /file                            controllers.api.YmlFileWebApi.get(id)
+
+#保存する（編集内容、新規等）
+POST          /game/file                       controllers.api.YmlFileWebApi.post()
+
+#yml形式のFileを保存する
+POST          /game/ymlfile                    controllers.api.YmlFileWebApi.postYmlFile(id)
+
+#削除する
+DELETE        /game/file                       controllers.api.YmlFileWebApi.delete(id)
+
+
+
+########################################################################################
+# Document
+########################################################################################
+
+#一覧が表示される
+GET           /game/file/document              controllers.api.DocumentWebApi.page(id)
+
+#JSON表示
+GET           /document/$id<[^/]+>             controllers.api.DocumentWebApi.list(id)
+
+#保存する
+POST          /game/file/document              controllers.api.DocumentWebApi.post()
+
+#削除する
+DELETE        /game/file/document              controllers.api.DocumentWebApi.delete(id)
+
+
+
+
+
+
+
+########################################################################################
+#
+# システム管理者用
+#
+########################################################################################
+# System
+########################################################################################
+
+#ユーザーのシステム管理者用ページを表示
+GET           /system                          controllers.api.SystemManagerWebApi.page()
+
+#ユーザーの全リストを取得
+GET           /system/account                  controllers.api.SystemManagerWebApi.list()

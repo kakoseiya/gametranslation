@@ -1,0 +1,19 @@
+@import services.user.GtUser
+
+@(user: GtUser)
+@translation_main {
+
+    <header-nav navtype="game" user="@user.getUserId()"></header-nav>
+    <translation-game-list></translation-game-list>
+
+    <script>
+            var menuObs = riot.observable();
+            var obs = riot.observable();
+            var messageObs = riot.observable();
+
+            riot.mount('header-nav');
+            riot.mount('translation-game-list');
+
+    </script>
+
+}

@@ -1,0 +1,15 @@
+@import conf.Definitions
+@(hash : String)
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+ご登録いただきまして誠にありがとうございます。
+現在アカウントは仮登録の状態です。
+本登録のため下記URLへアクセスし本登録を完了してください。
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+
+■本登録手続き
+
+
+本登録画面へ移動する
+@Definitions.USER_MANAGEMENT_SYSTEM_BASE_URL@controllers.routes.SignUp.confirmEmail(hash)

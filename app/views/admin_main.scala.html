@@ -1,0 +1,36 @@
+@(content: Html)
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GAME Translation</title>
+
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("bootstrap3/css/bootstrap.css")"/>
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/main.css")"/>
+
+        <script src="@routes.Assets.versioned("js/vendor/jquery-3.2.1.min.js")"></script>
+        <script src="@routes.Assets.versioned("bootstrap3/js/bootstrap.js")"></script>
+        @*自作js*@
+        <script src="@routes.Assets.versioned("js/mixin/optsmixin.js")"></script>
+        @* fetch.js のロード https://github.com/github/fetch*@
+        <script src="@routes.Assets.versioned("js/vendor/fetch.js")"></script>
+        @* Riot.js のロード（プリコンパイル済み用） http://riotjs.com/v2/ja/ *@
+        <script src="@routes.Assets.versioned("js/vendor/riot.js")"></script>
+        <script src="@routes.Assets.versioned("tags/app/main.min.js")"></script>
+    </head>
+    <body>
+        <header-nav></header-nav>
+        <section> @content </section>
+        <footer-list></footer-list>
+
+        <script>
+                var menuObs = riot.observable();
+                var obs = riot.observable();
+                var messageObs = riot.observable();
+
+                riot.mount('header-nav');
+                riot.mount('footer-list');
+
+        </script>
+
+    </body>
+</html>

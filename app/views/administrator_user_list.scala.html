@@ -1,0 +1,15 @@
+@import services.user.GtUser
+
+@(user: GtUser)
+@administrator_main {
+    <header-nav navtype="" user="@user.getUserId()"></header-nav>
+    <div class="container">
+        <administrator-user-list></administrator-user-list>
+    </div>
+
+    <script>
+            riot.mount('header-nav');
+            riot.mount('administrator-user-list');
+    </script>
+
+}

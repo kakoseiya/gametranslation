@@ -1,0 +1,17 @@
+@(publicId: String)
+
+@translation_main {
+
+    <translation-game-item publicid="@publicId"></translation-game-item>
+
+
+    <script>
+            var menuObs = riot.observable();
+            var obs = riot.observable();
+            var messageObs = riot.observable();
+
+            riot.mount('translation-administrator_main');
+
+    </script>
+
+}
