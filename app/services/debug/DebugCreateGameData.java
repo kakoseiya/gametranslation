@@ -34,9 +34,9 @@ public class DebugCreateGameData {
         User user;
         user = new User();
         user.setBirthDay(LocalDate.of(1990, 1, 1));
-        user.setMail("kakoseiya@gmail.com");
-        user.setEncPassword(generatePasswordHash("guest04140414"));
-        user.setMobileNumber("09050016639");
+        user.setMail("ka@gmail.com");
+        user.setEncPassword(generatePasswordHash("guest"));
+        user.setMobileNumber("0900000000");
         user.setUserName("GUEST");
         user.setUserPrivileges(UserPrivileges.GUEST);
         user.setUserStatus(UserStatus.REGISTERED);
